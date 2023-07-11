@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ 
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<localRepository>C:\dev\m2\repository</localRepository>
+<profiles>  
+<profile>  
+<id>env-dev-activeviam</id>  
+<activation>  
+<activeByDefault>true</activeByDefault>  
+</activation>
+<properties>
+<quartetfs.repository.id>QuartetRepository</quartetfs.repository.id>
+<quartetfs.repository.url>http://192.168.0.105:8081/nexus/content/repositories/QuartetRepository</quartetfs.repository.url>
+</properties>
+<repositories>
+<repository>  
+<id>local</id>  
+<name>local</name>  
+<url>C:\dev\m2\repository</url>
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+<layout>default</layout>  
+</repository>  
+
+ 
+
+<repository>  
+<id>jbossRepository</id>  
+<name>jbossRepository</name>  
+<url>https://repository.jboss.org/nexus/content/groups/public/</url>  
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+<layout>default</layout>  
+</repository>  
+
+ 
+
+<repository>  
+<id>apache-snapshot-repo</id>  
+<name>Apache Snapshot Repo</name>  
+<url>https://repository.apache.org/content/repositories/snapshots/</url>  
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+</repository>  
+
+ 
+
+<repository>
+<id>ActiveViamInternalRepository</id>
+<name>ActiveViam Internal Repository</name>
+<url>https://activeviam.jfrog.io/activeviam/mvn-internal/</url>
+<layout>default</layout>
+</repository>
+
+ 
+
+<repository>
+                    <id>confluent</id>
+                    <url>http://packages.confluent.io/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+
+ 
+
+<repository>  
+<id>Tuba</id>  
+<name>Tuba</name>  
+<url>file:////tuba/repository/</url>
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+<layout>default</layout>  
+</repository>
+</repositories>  
+</profile>
+
+ 
+
+<profile>
+<id>release_profile</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<quartetfs.repository.id>QuartetRepository</quartetfs.repository.id>
+<quartetfs.repository.url>http://192.168.0.105:8081/nexus/content/repositories/QuartetRepository</quartetfs.repository.url>
+</properties>
+</profile>
+</profiles>
+
+ 
+
+<!-- the section below is used for deployment -->  
+<servers>  
+<server>  
+<id>QuartetRepository</id>  
+<username>deployment</username>  
+<password>dev_tools</password>  
+</server>
+<server>  
+<id>LondonRepository</id>  
+<username>deployment</username>  
+<password>dev_tools</password>  
+</server>
+<server>  
+<id>Tuba</id>  
+<username>Profiling</username>  
+<password>pc for profiling</password>  
+</server>
+<server>
+<id>ActiveViamInternalRepository</id>
+<username>edallagnol</username>
+<password>Bellum142</password>
+</server>
+</servers>
+</settings>
